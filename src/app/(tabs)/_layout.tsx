@@ -1,33 +1,55 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';  
+import Octicons from '@expo/vector-icons/Octicons';
 
 export default function TabsLayout() {
   return (
     <Tabs>
-      {/* Define the first tab: Home (index) */}
+      {/* Home Tab */}
       <Tabs.Screen
-        name="index"
+        name="(homescreen)"
         options={{
           tabBarLabel: 'Home',
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" color={color} size={size} />
           ),
-          headerShown: false,
         }}
       />
       
-      {/* Define the second tab: Explore */}
+      {/* Cart Tab */}
       <Tabs.Screen
-        name="explore"
+        name="(cartscreen)"
         options={{
-          tabBarLabel: 'Explore',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="compass-outline" color={color} size={size} />
-          ),
+          tabBarLabel: 'Cart',
           headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart" color={color} size={size} />
+          ),
+        }}
+      />
+
+   <Tabs.Screen
+        name="(favoritesscreen)"
+        options={{
+          tabBarLabel: 'Favorites',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="heart" color={color} size={size} />
+          ),
+        }}
+      />
+
+<Tabs.Screen
+        name="(orderhistoryscreen)"
+        options={{
+          tabBarLabel: 'Order History',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Octicons name="bell" size={24}  />
+          ),
         }}
       />
     </Tabs>
   );
 }
-
