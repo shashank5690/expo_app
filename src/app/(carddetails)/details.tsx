@@ -8,18 +8,13 @@ export default function CardDetailScreen() {
   const router = useRouter();
 
   const goToHomeScreen = () => {
-    router.push('/(tabs)/(homescreen)/homescreen'); 
+    //router.push('/(tabs)/(homescreen)/homescreen'); 
   };
 
   return (
-       <View style={styles.ScreenContainer}>
-        <StatusBar backgroundColor={COLORS.primaryBlackHex} />
-        <ScrollView
-         showsVerticalScrollIndicator={false}
-         contentContainerStyle={styles.ScrollViewFlex}>
-          {/* <ImageBackgroundInfo /> */}
-        </ScrollView>
-
+       <View style={{backgroundColor:'green',flex:1}}>
+       <Text style={{color:'red'}}>hiibhbfr edbjdhbjdm </Text>
+       <Text> hhjojiedhbxe </Text>
        </View>
   );
 }

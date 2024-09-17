@@ -58,7 +58,7 @@ const HomeScreen = () => {
 
   const CoffeeList = useStore((state: any) => state.CoffeeList);
   const BeanList = useStore((state: any) => state.BeanList);
-   const route=useRouter();
+   const router=useRouter();
   const [categories, setCategories] = useState(
     getCategoriesFromData(CoffeeList)
   );
@@ -202,9 +202,11 @@ const HomeScreen = () => {
       renderItem={({item}) => {
         return (
           //navigation
-          <TouchableOpacity onPress={()=>{
-            //route.push('/(card)')
-          }}>
+          <TouchableOpacity
+      onPress={() => {
+        router.push("/(carddetails)/details");
+      }}
+    >
              <CoffeeCard
                   id={item.id}
                   index={item.index}
@@ -235,7 +237,9 @@ const HomeScreen = () => {
       keyExtractor={item => item.id}
       renderItem={({item}) => {
         return (
-          <TouchableOpacity onPress={()=>{}}>
+          <TouchableOpacity onPress={()=>{
+            router.push("/(carddetails)/details");
+          }}>
              <CoffeeCard
                   id={item.id}
                   index={item.index}

@@ -4,7 +4,7 @@ export default function HomeScreenLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="homescreen"
+        name="home"
 
         options={{ headerShown: false }}
       />
