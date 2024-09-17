@@ -12,8 +12,6 @@ const  CardDetailScreen = ({navigation,route}: any) => {
   )[route.params.index];
 
  
-
-
   return (
        <View style={styles.ScreenContainer}>
         <StatusBar backgroundColor={COLORS.primaryBlackHex} />
@@ -36,7 +34,6 @@ const  CardDetailScreen = ({navigation,route}: any) => {
           ToggleFavourite={() => {}}
           />
         </ScrollView>
-
        </View>
   );
 }

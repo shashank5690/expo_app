@@ -1,3 +1,4 @@
+
 interface Spacing {
   space_2: number;
   space_4: number;
@@ -147,3 +148,4 @@ export const BORDERRADIUS: BorderRadius = {
   radius_20: 20,
   radius_25: 25,
 };
+
