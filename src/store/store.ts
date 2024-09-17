@@ -135,10 +135,13 @@ export const useStore = create(
                 state.FavoritesList.splice(spliceIndex, 1);
               }),
             ),
+
     }),
     {
       name: "expo_app-1",
       storage: createJSONStorage(() => AsyncStorage),
-    }
-  )
+
+    },
+  ),
+
 );
