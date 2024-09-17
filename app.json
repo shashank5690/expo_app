@@ -32,7 +32,7 @@
       [
         "expo-font",
         {
-            "fonts" :["./assets/fonts/app_icons.ttf"]
+            "fonts" :["assets/fonts/app_icons.ttf"]
         }
       ],
       "expo-router",

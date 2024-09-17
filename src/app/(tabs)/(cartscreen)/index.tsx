@@ -5,7 +5,7 @@ import { Poppins_500Medium } from '@expo-google-fonts/poppins'
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
-export default function HomeScreen() {
+export default function CartScreen() {
 
   const [fontsLoaded] = useFonts({
     "Poppins": Poppins_500Medium,
@@ -14,7 +14,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Ionicons name="heart-circle" size={32} color="green" />
-      <Text style={styles.text}>Home Screen</Text>
+      <Text style={styles.text}>Cart Screen</Text>
     </View>
   );
 }
