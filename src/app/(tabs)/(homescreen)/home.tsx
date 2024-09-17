@@ -203,9 +203,16 @@ const HomeScreen = () => {
         return (
           //navigation
           <TouchableOpacity
-      onPress={() => {
-        router.push("/(carddetails)/details");
-      }}
+          onPress={() => {
+            router.navigate({
+              pathname: "/(carddetails)/details",
+              params: {
+                index: item.index,
+                id: item.id,
+                type: item.type,
+              },
+            });
+          }}
     >
              <CoffeeCard
                   id={item.id}
@@ -238,8 +245,15 @@ const HomeScreen = () => {
       renderItem={({item}) => {
         return (
           <TouchableOpacity onPress={()=>{
-            router.push("/(carddetails)/details");
-          }}>
+            router.navigate({
+              pathname: "/(carddetails)/details",
+              params: {
+                index: item.index,
+                id: item.id,
+                type: item.type,
+              },
+            });
+            }}>
              <CoffeeCard
                   id={item.id}
                   index={item.index}
