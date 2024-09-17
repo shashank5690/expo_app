@@ -75,7 +75,7 @@ const PaymentsScreen = ({ navigation, route }: any) => {
       {showAnimation ? (
         <PopUpAnimation
           style={styles.LottieAnimation}
-          source={require("../../Utils/lottie/successful.json")}
+          source={require("../../Utils/lottie/splash.json")}
         />
       ) : (
         <></>

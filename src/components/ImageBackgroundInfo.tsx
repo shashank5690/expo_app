@@ -7,20 +7,14 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import GradientBGIcon from "./GradientBGIcon";
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTFAMILY,
-  FONTSIZE,
-  SPACING,
-} from "../Utils/theme/theme";
-import CustomIcon from "./CustomIcon";
+import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "../Utils/theme/theme";
 import { LinearGradient } from "expo-linear-gradient";
-import Fontisto from "@expo/vector-icons/Fontisto";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import {
+  Fontisto,
+  AntDesign,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import { useAppFonts } from "../Utils/fonts";
 
 interface ImageBackgroundInfoProps {
@@ -54,8 +48,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
   BackHandler,
   ToggleFavourite,
 }) => {
-  const fontsLoaded = useAppFonts();
 
+  const fontsLoaded = useAppFonts();
   if (!fontsLoaded) {
     return null;
   }
