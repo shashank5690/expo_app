@@ -1,14 +1,17 @@
 import React from 'react';
+
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; 
 import { COLORS, FONTSIZE, SPACING } from '../Utils/theme/theme';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 interface GradientBGIconProps {
   name: string;
   color: string;
   size: number;
 }
+
 
 const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) => {
   return (
@@ -25,12 +28,14 @@ const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) =>
         size={FONTSIZE.size_18}
       />
             </LinearGradient>
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+
+  Container: {
     borderWidth: 2,
     borderColor: COLORS.secondaryDarkGreyHex,
     borderRadius: SPACING.space_12,
@@ -39,7 +44,9 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.secondaryDarkGreyHex,
     overflow: 'hidden',
   },
-  linearGradientBG: {
+
+  LinearGradientBG: {
+
     height: SPACING.space_36,
     width: SPACING.space_36,
     alignItems: 'center',

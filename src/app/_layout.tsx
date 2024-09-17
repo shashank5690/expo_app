@@ -7,7 +7,6 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        {/* Root Navigation */}
         <RootNavigation />
 
         {/* StatusBar configuration */}
@@ -20,13 +19,20 @@ export default function RootLayout() {
 const RootNavigation = () => {
   return (
     <Stack>
-      {/* Stack screen for tab navigation, hides header */}
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      {/* Tab Navigation */}
+      <Stack.Screen 
+        name="(tabs)" 
+        options={{ headerShown: false }} 
+      />
+      <Stack.Screen 
+        name="(carddetails)/details" 
+        options={{ headerShown: false, title: "Card Details" }} 
+      />
 
-      {/* You can add additional Stack.Screen components here if needed, such as modals or other screens */}
-      {/* Example for a modal or extra screen:
-      <Stack.Screen name="exampleModal" options={{ presentation: 'modal' }} />
-      */}
+      <Stack.Screen 
+        name="(payments)/payments" 
+        options={{ headerShown: false, title: "Payments" }} 
+      />
     </Stack>
   );
 };

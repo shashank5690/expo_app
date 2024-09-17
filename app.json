@@ -29,6 +29,13 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-font",
+        {
+            "fonts" :["assets/fonts/app_icons.ttf"]
+        }
+      ],
+
       "expo-router",
       [
         "expo-asset",
