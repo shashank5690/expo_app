@@ -1,5 +1,6 @@
 import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "@/src/Utils/theme/theme";
 import { StyleSheet } from "react-native";
+import {Dimensions} from 'react-native';
 
 
 export const styles = StyleSheet.create({
@@ -66,5 +67,11 @@ export const styles = StyleSheet.create({
     marginTop: SPACING.space_20,
     fontFamily: 'Poppins_500Medium',
     color: COLORS.secondaryLightGreyHex,
+      },
+      EmptyListContainer:{
+        width: Dimensions.get('window').width - SPACING.space_30 * 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: SPACING.space_36 * 3.6,
       }
 })
