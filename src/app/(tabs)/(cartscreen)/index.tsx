@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
-import { Poppins_500Medium } from '@expo-google-fonts/poppins'
+// import { Poppins_500Medium } from '@expo-google-fonts/poppins'
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
 export default function CartScreen() {
 
-  const [fontsLoaded] = useFonts({
-    "Poppins": Poppins_500Medium,
-  });
+  // const [fontsLoaded] = useFonts({
+  //   "Poppins": Poppins_500Medium,
+  // });
   
   return (
     <View style={styles.container}>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     color: '#333',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     top: 350
   },
 });

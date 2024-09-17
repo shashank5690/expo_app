@@ -1,8 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import {COLORS, SPACING} from '../Utils/theme/theme';
-import CustomIcon from './CustomIcon';
+
+import { StyleSheet, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient'; 
+import { COLORS, FONTSIZE, SPACING } from '../Utils/theme/theme';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 interface GradientBGIconProps {
   name: string;
@@ -10,21 +12,29 @@ interface GradientBGIconProps {
   size: number;
 }
 
-const GradientBGIcon: React.FC<GradientBGIconProps> = ({name, color, size}) => {
+
+const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) => {
   return (
-    <View style={styles.Container}>
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 1}}
+    <View style={styles.container}>
+       <LinearGradient
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
         colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
-        style={styles.LinearGradientBG}>
-        <CustomIcon name={name} color={color} size={size} />
-      </LinearGradient>
+        style={styles.linearGradientBG}
+      >
+      <MaterialCommunityIcons
+        name="vector-square"
+        color={COLORS.primaryLightGreyHex}
+        size={FONTSIZE.size_18}
+      />
+            </LinearGradient>
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+
   Container: {
     borderWidth: 2,
     borderColor: COLORS.secondaryDarkGreyHex,
@@ -34,7 +44,9 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.secondaryDarkGreyHex,
     overflow: 'hidden',
   },
+
   LinearGradientBG: {
+
     height: SPACING.space_36,
     width: SPACING.space_36,
     alignItems: 'center',

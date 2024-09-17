@@ -35,6 +35,7 @@
             "fonts" :["assets/fonts/app_icons.ttf"]
         }
       ],
+
       "expo-router",
       [
         "expo-asset",
