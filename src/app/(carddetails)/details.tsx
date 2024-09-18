@@ -36,7 +36,7 @@ const CardDetailScreen = () => {
 
   const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
   const deleteFromFavoriteList = useStore(
-    (state: any) => state.deleteFromFavoriteList
+    (state: any) => state.deleteFromFavoriteList,
   );
 
   const addToCart = useStore((state: any) => state.addToCart);
@@ -48,7 +48,7 @@ const CardDetailScreen = () => {
   const ToggleFavourite = (favourite: boolean, type: string, id: string) => {
     favourite ? deleteFromFavoriteList(type, id) : addToFavoriteList(type, id);
   };
-  // console.log("ItemOfIndex:", ItemOfIndex);
+  
 
   const addToCarthandler = ({
     id,
@@ -70,18 +70,8 @@ const CardDetailScreen = () => {
       type,
       prices: [{...price, quantity: 1}],
     });
-    // console.log("Added to Cart:", {
-    //   id,
-    //   index,
-    //   name,
-    //   roasted,
-    //   imagelink_square,
-    //   special_ingredient,
-    //   type,
-    //   prices: [{ ...price, quantity: 1 }],
-    // });
     calculateCartPrice();
-    router.push('/(cartscreen)');
+    router.push('/(cartscreen)/cart');
   };
 
   return (
