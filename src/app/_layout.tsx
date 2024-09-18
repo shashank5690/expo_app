@@ -2,8 +2,20 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
+import {
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_300Light,
+  Poppins_400Regular
+} from "@expo-google-fonts/poppins";
+import { useFonts } from "expo-font";
 export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    Poppins_600SemiBold: Poppins_600SemiBold,
+    Poppins_500Medium: Poppins_500Medium,
+    Poppins_300Light: Poppins_300Light,
+    Poppins_400Regular:Poppins_400Regular,
+  });
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>

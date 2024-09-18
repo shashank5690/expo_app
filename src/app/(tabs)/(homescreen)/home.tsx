@@ -6,12 +6,12 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
-import {
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-  Poppins_300Light,
-} from "@expo-google-fonts/poppins";
-import { useFonts } from "expo-font";
+// import {
+//   Poppins_500Medium,
+//   Poppins_600SemiBold,
+//   Poppins_300Light,
+// } from "@expo-google-fonts/poppins";
+// import { useFonts } from "expo-font";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { styles } from "./homeStyle";
 import { useStore } from "@/src/store/store";
@@ -47,11 +47,11 @@ const getCoffeeList = (category: string, data: any) => {
 };
 
 const HomeScreen = () => {
-  const [fontsLoaded] = useFonts({
-    Poppins_600SemiBold: Poppins_600SemiBold,
-    Poppins_500Medium: Poppins_500Medium,
-    Poppins_300Light: Poppins_300Light,
-  });
+  // const [fontsLoaded] = useFonts({
+  //   Poppins_600SemiBold: Poppins_600SemiBold,
+  //   Poppins_500Medium: Poppins_500Medium,
+  //   Poppins_300Light: Poppins_300Light,
+  // });
   // if (!fontsLoaded) {
   //   return null;
   // }

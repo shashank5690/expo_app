@@ -16,12 +16,12 @@ import {
   SPACING,
 } from '../Utils/theme/theme';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import {
-    Poppins_500Medium,
-    Poppins_600SemiBold,
-    Poppins_300Light
-  } from "@expo-google-fonts/poppins";
-  import { useFonts } from "expo-font";
+// import {
+//     Poppins_500Medium,
+//     Poppins_600SemiBold,
+//     Poppins_300Light
+//   } from "@expo-google-fonts/poppins";
+//   import { useFonts } from "expo-font";
 import BGIcon from './BGIcon';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
@@ -51,11 +51,11 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
   price,
   buttonPressHandler,
 }) => {
-    const [fontsLoaded] = useFonts({
-        Poppins_600SemiBold: Poppins_600SemiBold,
-        Poppins_500Medium: Poppins_500Medium,
-        Poppins_300Light: Poppins_300Light,
-      });
+    // const [fontsLoaded] = useFonts({
+    //     Poppins_600SemiBold: Poppins_600SemiBold,
+    //     Poppins_500Medium: Poppins_500Medium,
+    //     Poppins_300Light: Poppins_300Light,
+    //   });
     //   if (!fontsLoaded) {
     //     return null;
     //   }
@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins_600SemiBold',
     color: COLORS.primaryOrangeHex,
     fontSize: FONTSIZE.size_18,
+    
   },
   CardPrice: {
     color: COLORS.primaryWhiteHex,

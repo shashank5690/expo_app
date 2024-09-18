@@ -14,7 +14,7 @@ export default function TabsLayout() {
       tabBarShowLabel: false,
       tabBarStyle: styles.tabBarStyle,
       tabBarBackground: () =>  (
-        <BlurView intensity={15} style={styles.blurContainer} />
+        <BlurView intensity={15} tint="dark" style={styles.blurContainer} />
       )
     }}
     >
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   tabBarStyle: {
     height: 80,
     position: 'absolute',
+   // backgroundColor: 'transparent', 
     backgroundColor: COLORS.primaryBlackRGBA,
     borderTopWidth: 0,
     elevation: 0,
