@@ -14,7 +14,7 @@ export default function TabsLayout() {
       tabBarShowLabel: false,
       tabBarStyle: styles.tabBarStyle,
       tabBarBackground: () =>  (
-        <BlurView intensity={15} tint="dark" style={styles.blurContainer} />
+        <BlurView intensity={25} tint="dark" style={styles.blurContainer} />
       )
     }}
     >
