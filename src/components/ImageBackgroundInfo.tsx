@@ -86,7 +86,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 ToggleFavourite(favourite, type, id);
               }}
             >
-              <View style={styles.IconContainer}>
+              <View style={styles.IconContainer2}>
                 <LinearGradient
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
@@ -113,7 +113,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 ToggleFavourite(favourite, type, id);
               }}
             >
-              <View style={styles.IconContainer}>
+              <View style={styles.IconContainer2}>
                 <LinearGradient
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
@@ -234,6 +234,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: COLORS.secondaryDarkGreyHex,
     overflow: "hidden",
+    right:SPACING.space_15,
+  },
+  IconContainer2: {
+    borderWidth: 2,
+    borderColor: COLORS.secondaryDarkGreyHex,
+    borderRadius: SPACING.space_12,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: COLORS.secondaryDarkGreyHex,
+    overflow: "hidden",
+    left:SPACING.space_15,
   },
   LinearGradientBG: {
     height: SPACING.space_36,

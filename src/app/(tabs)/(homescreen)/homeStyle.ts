@@ -64,11 +64,13 @@ export const styles = StyleSheet.create({
     gap: SPACING.space_20,
     paddingVertical: SPACING.space_20,
     paddingHorizontal: SPACING.space_30,
+    bottom:21,
+  //  backgroundColor:'green'
   },
   CoffeeBeansTitle: {
     fontSize: FONTSIZE.size_18,
     marginLeft: SPACING.space_30,
-    marginTop: SPACING.space_20,
+    //marginTop: SPACING.space_20,
     fontFamily: "Poppins_500Medium",
     color: COLORS.secondaryLightGreyHex,
       },
