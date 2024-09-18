@@ -1,20 +1,20 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useFonts } from 'expo-font';
-// import { Poppins_500Medium } from '@expo-google-fonts/poppins'
+import { useAppFonts } from "../../../Utils/fonts";
 import Ionicons from '@expo/vector-icons/Ionicons';
-
+import { useStore } from "../../../store/store";
 
 export default function CartScreen() {
 
-  // const [fontsLoaded] = useFonts({
-  //   "Poppins": Poppins_500Medium,
-  // });
+  const CartList = useStore((state: any) => state.CartList);
+  console.log("CartList:", CartList.length);
+  const fontsLoaded = useAppFonts();
+  if (!fontsLoaded) {
+    return null;
+  }
   
   return (
     <View style={styles.container}>
-      <Ionicons name="heart-circle" size={32} color="green" />
-      <Text style={styles.text}>Cart Screen</Text>
     </View>
   );
 }
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     color: '#333',
-    // fontFamily: 'Poppins',
+    fontFamily: 'Poppins',
     top: 350
   },
 });
