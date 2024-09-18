@@ -4,7 +4,7 @@ export default function FavoriteScreenLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name="favorites"
         options={{ headerShown: false }}
 
       />
