@@ -1,23 +1,23 @@
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
+import { ScrollView } from "react-native-gesture-handler";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { LinearGradient } from "expo-linear-gradient";
+import PaymentMethod from "../../components/PaymentMethod";
+import PaymentFooter from "../../components/PaymentFooter";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import PopUpAnimation from "@/src/components/PopUpAnimation";
+import { useStore } from "@/src/store/store";
+import { useAppFonts } from "../../Utils/fonts";
 import {
   BORDERRADIUS,
   COLORS,
   FONTSIZE,
   SPACING,
 } from "@/src/Utils/theme/theme";
-import { ScrollView } from "react-native-gesture-handler";
-import { useFonts } from "expo-font";
-import { Poppins_500Medium } from "@expo-google-fonts/poppins";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import { LinearGradient } from "expo-linear-gradient";
-import PaymentMethod from "../../components/PaymentMethod";
-import PaymentFooter from "../../components/PaymentFooter";
-import { router, useRouter } from "expo-router";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import PopUpAnimation from "@/src/components/PopUpAnimation";
 
 const PaymentList = [
   {
@@ -42,43 +42,43 @@ const PaymentList = [
   },
 ];
 
-const PaymentsScreen = ({ navigation, route }: any) => {
-
+const PaymentsScreen = () => {
+  const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
+  const addToOrderHistoryListFromCart = useStore(
+    (state: any) => state.addToOrderHistoryListFromCart
+  );
   const router = useRouter();
+  const { amount } = useLocalSearchParams();
+
+  const [paymentMode, setPaymentMode] = useState("Credit Card");
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  const amountString = Array.isArray(amount) ? amount[0] : amount || "0";
 
   const buttonPressHandler = () => {
-  
     setShowAnimation(true);
-    // addToOrderHistoryListFromCart(); // nav to orderhistory page later
-    // calculateCartPrice();
+    addToOrderHistoryListFromCart();
+    calculateCartPrice();
     setTimeout(() => {
       setShowAnimation(false);
       router.push("/(tabs)/(orderhistoryscreen)");
     }, 2000);
-  }; 
+  };
 
-  const [fontsLoaded] = useFonts({
-    Poppins: Poppins_500Medium,
-  });
-
-  // const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
-  // const addToOrderHistoryListFromCart = useStore(
-  //   (state: any) => state.addToOrderHistoryListFromCart,
-  // );
-  const [paymentMode, setPaymentMode] = useState("Credit Card");
-  const [showAnimation, setShowAnimation] = useState(false);
+  const fontsLoaded = useAppFonts();
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
 
-      {showAnimation ? (
+      {showAnimation && (
         <PopUpAnimation
           style={styles.LottieAnimation}
           source={require("../../Utils/lottie/splash.json")}
         />
-      ) : (
-        <></>
       )}
 
       <ScrollView
@@ -121,7 +121,7 @@ const PaymentsScreen = ({ navigation, route }: any) => {
                 styles.CreditCardContainer,
                 {
                   borderColor:
-                    paymentMode == "Credit Card"
+                    paymentMode === "Credit Card"
                       ? COLORS.primaryOrangeHex
                       : COLORS.primaryGreyHex,
                 },
@@ -174,7 +174,7 @@ const PaymentsScreen = ({ navigation, route }: any) => {
             </View>
           </TouchableOpacity>
 
-          {PaymentList.map((data: any) => (
+          {PaymentList.map((data) => (
             <TouchableOpacity
               key={data.name}
               onPress={() => {
@@ -194,7 +194,7 @@ const PaymentsScreen = ({ navigation, route }: any) => {
 
       <PaymentFooter
         buttonTitle={`Pay with ${paymentMode}`}
-        price={{ currency: "$", price: "100.50" }}
+        price={{ currency: "$", price: amountString }}
         buttonPressHandler={buttonPressHandler}
       />
     </View>
