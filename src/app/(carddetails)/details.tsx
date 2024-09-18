@@ -29,6 +29,7 @@ const CardDetailScreen = () => {
   )[itemIndex];
 
   const router = useRouter();
+  
 
   const BackHandler = () => {
     router.back();
