@@ -48,7 +48,6 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
   BackHandler,
   ToggleFavourite,
 }) => {
-
   const fontsLoaded = useAppFonts();
   if (!fontsLoaded) {
     return null;
@@ -95,7 +94,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                   style={styles.LinearGradientBG}
                 >
                   <Fontisto
-                    name="like"
+                    name="heart"
                     color={
                       favourite
                         ? COLORS.primaryRedHex
@@ -122,7 +121,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                   style={styles.LinearGradientBG}
                 >
                   <Fontisto
-                    name="like"
+                    name="heart"
                     color={
                       favourite
                         ? COLORS.primaryRedHex
@@ -208,6 +207,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    top: SPACING.space_20,
   },
   ImageHeaderBarContainerWithoutBack: {
     padding: SPACING.space_30,
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
   },
   PropertyTextLast: {
     fontFamily: "Poppins",
-    fontSize: FONTSIZE.size_10,
+    fontSize: FONTSIZE.size_12,
     color: COLORS.primaryWhiteHex,
     marginTop: SPACING.space_2 + SPACING.space_4,
   },

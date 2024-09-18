@@ -3,7 +3,6 @@ import React from 'react';
 import {
   BORDERRADIUS,
   COLORS,
-  FONTFAMILY,
   FONTSIZE,
   SPACING,
 } from '../Utils/theme/theme';

@@ -22,6 +22,8 @@ import HeaderBar from "@/src/components/HeaderBar";
 import CoffeeCard from "@/src/components/CoffeeCard";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useRouter } from "expo-router";
+import Toast from 'react-native-toast-message';
+
 
 const getCategoriesFromData = (data: any) => {
   let temp: any = {};
@@ -52,9 +54,7 @@ const HomeScreen = () => {
     Poppins_500Medium: Poppins_500Medium,
     Poppins_300Light: Poppins_300Light,
   });
-  // if (!fontsLoaded) {
-  //   return null;
-  // }
+
 
   const CoffeeList = useStore((state: any) => state.CoffeeList);
   const BeanList = useStore((state: any) => state.BeanList);
@@ -70,6 +70,8 @@ const HomeScreen = () => {
   const [sortedCoffee, setSortedCoffee] = useState(
     getCoffeeList(categoryIndex.category, CoffeeList)
   );
+  const addToCart = useStore((state: any) => state.addToCart);
+  const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
 
   const ListRef: any = useRef<FlatList>();
   const searchCoffee = (search: string) => {
@@ -95,6 +97,34 @@ const HomeScreen = () => {
     setCategoryIndex({index: 0, category: categories[0]});
     setSortedCoffee([...CoffeeList]);
     setSearchText('');
+  };
+
+  const CoffeeCardAddToCart = ({
+    id,
+    index,
+    name,
+    roasted,
+    imagelink_square,
+    special_ingredient,
+    type,
+    prices,
+  }: any) => {
+    addToCart({
+      id,
+      index,
+      name,
+      roasted,
+      imagelink_square,
+      special_ingredient,
+      type,
+      prices,
+    });
+    calculateCartPrice();
+    Toast.show({
+      type: 'success', 
+      text1: `${name} added to cart`,
+      position: 'top', 
+    });
   };
 
   return (
@@ -224,13 +254,14 @@ const HomeScreen = () => {
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={()=>{}}
+                  buttonPressHandler={CoffeeCardAddToCart}
                 />
           </TouchableOpacity>
         );
       }}
       />
       
+      {/* Bean */}
       <Text style={styles.CoffeeBeansTitle}>Coffee Beans</Text>
 
       <FlatList 
@@ -264,7 +295,7 @@ const HomeScreen = () => {
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={()=>{}}
+                  buttonPressHandler={CoffeeCardAddToCart}
                 />
           </TouchableOpacity>
         );
