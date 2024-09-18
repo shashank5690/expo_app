@@ -19,7 +19,7 @@ interface FavoritesItemCardProps {
   average_rating: number;
   ratings_count: string;
   roasted: string;
-  description: string;
+  description: any;
   favourite: boolean;
   ToggleFavouriteItem: any;
 }

@@ -6,12 +6,12 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
-// import {
-//   Poppins_500Medium,
-//   Poppins_600SemiBold,
-//   Poppins_300Light,
-// } from "@expo-google-fonts/poppins";
-// import { useFonts } from "expo-font";
+import {
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_300Light,
+} from "@expo-google-fonts/poppins";
+import { useFonts } from "expo-font";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { styles } from "./homeStyle";
 import { useStore } from "@/src/store/store";
@@ -281,7 +281,7 @@ const HomeScreen = () => {
       data={BeanList}
       contentContainerStyle={[
         styles.FlatListContainer,
-        {marginBottom: 100},
+        {marginBottom: 50},
       ]}
       keyExtractor={item => item.id}
       renderItem={({item}) => {

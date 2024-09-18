@@ -19,4 +19,5 @@ export const styles = StyleSheet.create({
         paddingHorizontal: SPACING.space_20,
         gap: SPACING.space_20,
       },
+      
   });
