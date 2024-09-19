@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: COLORS.secondaryDarkGreyHex,
     overflow: "hidden",
-    right:SPACING.space_15,
+    right: SPACING.space_15,
   },
   IconContainer2: {
     borderWidth: 2,
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: COLORS.secondaryDarkGreyHex,
     overflow: "hidden",
-    left:SPACING.space_15,
+    left: SPACING.space_15,
   },
   LinearGradientBG: {
     height: SPACING.space_36,
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   ItemTitleText: {
-    fontFamily: "PoppinsBold",
+    fontFamily: "Poppins_600SemiBold",
     fontSize: FONTSIZE.size_24,
     color: COLORS.primaryWhiteHex,
   },
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   RatingText: {
-    fontFamily: "PoppinsBold",
+    fontFamily: "Poppins_600SemiBold",
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex,
   },

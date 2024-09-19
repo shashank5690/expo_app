@@ -1,15 +1,9 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
-import React from 'react';
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTSIZE,
-  SPACING,
-} from '../Utils/theme/theme';
-import { LinearGradient } from 'expo-linear-gradient';
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { useAppFonts } from '../Utils/fonts';
-
+import { StyleSheet, Text, View, Image } from "react-native";
+import React from "react";
+import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "../Utils/theme/theme";
+import { LinearGradient } from "expo-linear-gradient";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { useAppFonts } from "../Utils/fonts";
 
 interface PaymentMethodProps {
   paymentMode: string;
@@ -24,11 +18,10 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
   icon,
   isIcon,
 }) => {
-
   const fontsLoaded = useAppFonts();
 
   if (!fontsLoaded) {
-    return null; 
+    return null;
   }
 
   return (
@@ -41,16 +34,18 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
               ? COLORS.primaryOrangeHex
               : COLORS.primaryGreyHex,
         },
-      ]}>
+      ]}
+    >
       {isIcon ? (
         <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 1}}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
           colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
-          style={styles.LinearGradientWallet}>
+          style={styles.LinearGradientWallet}
+        >
           <View style={styles.WalletRow}>
             <FontAwesome5
-              name={'wallet'}
+              name={"wallet"}
               color={COLORS.primaryOrangeHex}
               size={FONTSIZE.size_30}
             />
@@ -60,10 +55,11 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
         </LinearGradient>
       ) : (
         <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 1}}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
           colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
-          style={styles.LinearGradientRegular}>
+          style={styles.LinearGradientRegular}
+        >
           <Image source={icon} style={styles.PaymentImage} />
           <Text style={styles.PaymentTitle}>{name}</Text>
         </LinearGradient>
@@ -79,34 +75,34 @@ const styles = StyleSheet.create({
     borderWidth: 3,
   },
   LinearGradientWallet: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: SPACING.space_12,
     paddingHorizontal: SPACING.space_24,
     gap: SPACING.space_24,
     borderRadius: BORDERRADIUS.radius_15 * 2,
   },
   WalletRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: SPACING.space_24,
   },
   LinearGradientRegular: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     padding: SPACING.space_12,
     paddingHorizontal: SPACING.space_24,
     gap: SPACING.space_24,
     borderRadius: BORDERRADIUS.radius_15 * 2,
   },
   PaymentTitle: {
-    fontFamily: 'PoppinsBold',
+    fontFamily: "Poppins_600SemiBold",
     fontSize: FONTSIZE.size_16,
     color: COLORS.primaryWhiteHex,
   },
   PaymentPrice: {
-    fontFamily: 'Poppins',
+    fontFamily: "Poppins",
     fontSize: FONTSIZE.size_18,
     color: COLORS.secondaryLightGreyHex,
   },
@@ -114,8 +110,6 @@ const styles = StyleSheet.create({
     height: SPACING.space_30,
     width: SPACING.space_30,
   },
-  
-  
 });
 
 export default PaymentMethod;

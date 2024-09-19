@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   HeaderText: {
-    fontFamily: "PoppinsBold",
+    fontFamily: "Poppins_600SemiBold",
     fontSize: FONTSIZE.size_20,
     color: COLORS.primaryWhiteHex,
   },

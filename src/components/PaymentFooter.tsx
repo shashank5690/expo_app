@@ -1,12 +1,7 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import React from 'react';
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTSIZE,
-  SPACING,
-} from '../Utils/theme/theme';
-import { useAppFonts } from '../Utils/fonts';
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import React from "react";
+import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "../Utils/theme/theme";
+import { useAppFonts } from "../Utils/fonts";
 
 interface PriceProps {
   price: string;
@@ -24,12 +19,11 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
   buttonPressHandler,
   buttonTitle,
 }) => {
+  const fontsLoaded = useAppFonts();
 
-    const fontsLoaded = useAppFonts();
-
-    if (!fontsLoaded) {
-      return null; 
-    }
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <View style={styles.PriceFooter}>
@@ -41,7 +35,8 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
       </View>
       <TouchableOpacity
         style={styles.PayButton}
-        onPress={() => buttonPressHandler()}>
+        onPress={() => buttonPressHandler()}
+      >
         <Text style={styles.ButtonText}>{buttonTitle}</Text>
       </TouchableOpacity>
     </View>
@@ -50,23 +45,23 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
 
 const styles = StyleSheet.create({
   PriceFooter: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     gap: SPACING.space_20,
     padding: SPACING.space_20,
   },
   PriceContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     width: 100,
   },
   PriceTitle: {
-    fontFamily: 'Poppins',
+    fontFamily: "Poppins",
     fontSize: FONTSIZE.size_14,
     color: COLORS.secondaryLightGreyHex,
   },
   PriceText: {
-    fontFamily: 'PoppinsBold',
+    fontFamily: "Poppins_600SemiBold",
     fontSize: FONTSIZE.size_24,
     color: COLORS.primaryOrangeHex,
   },
@@ -76,13 +71,13 @@ const styles = StyleSheet.create({
   PayButton: {
     backgroundColor: COLORS.primaryOrangeHex,
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     height: SPACING.space_36 * 2,
     borderRadius: BORDERRADIUS.radius_20,
   },
   ButtonText: {
-    fontFamily: 'PoppinsBold',
+    fontFamily: "Poppins_600SemiBold",
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex,
   },

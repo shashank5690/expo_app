@@ -1,21 +1,20 @@
 import React from "react";
 import {
   View,
-  Text,
-  StyleSheet,
   StatusBar,
   TouchableOpacity,
 } from "react-native";
 import { useAppFonts } from "../../../Utils/fonts";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { useStore } from "../../../store/store";
-import { COLORS, SPACING } from "@/src/Utils/theme/theme";
+import { COLORS } from "@/src/Utils/theme/theme";
 import { ScrollView } from "react-native-gesture-handler";
 import HeaderBar from "@/src/components/HeaderBar";
-import { router, useRouter } from "expo-router";
+import { router } from "expo-router";
 import EmptyListAnimation from "@/src/components/EmptyListAnimation";
 import PaymentFooter from "@/src/components/PaymentFooter";
 import CartItem from "@/src/components/CartItem";
+import styles from "./StylesCart";
 
 export default function CartScreen() {
   const CartList = useStore((state: any) => state.CartList);
@@ -120,23 +119,4 @@ export default function CartScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-  },
-  ScrollViewInnerView: {
-    flex: 1,
-    justifyContent: "space-between",
-  },
-  ItemContainer: {
-    flex: 1,
-  },
-  ListItemContainer: {
-    paddingHorizontal: SPACING.space_20,
-    gap: SPACING.space_20,
-  },
-});
+
