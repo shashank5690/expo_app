@@ -1,55 +1,26 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  StatusBar,
-  TouchableWithoutFeedback,
-} from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTSIZE,
-  SPACING,
-} from "@/src/Utils/theme/theme";
-import { ScrollView } from "react-native-gesture-handler";
-import ImageBackgroundInfo from "@/src/components/ImageBackgroundInfo";
+import { Text, View, StatusBar, ScrollView } from "react-native";
+import { router, useLocalSearchParams, useRouter } from "expo-router";
+import { COLORS } from "@/src/Utils/theme/theme";
 import { useStore } from "@/src/store/store";
 import { useState } from "react";
 import PaymentFooter from "@/src/components/PaymentFooter";
+import ImageSection from "./components/ImageSection";
+import PriceSizeSelector from "./components/PriceSizeSelector";
+import DescriptionSection from "./components/DescriptionSection";
+import styles from "./StylesDetails";
 
 const CardDetailScreen = () => {
   const { type, index } = useLocalSearchParams();
-
   const itemIndex = Number(index);
 
   const ItemOfIndex = useStore((state: any) =>
     type === "Coffee" ? state.CoffeeList : state.BeanList
   )[itemIndex];
 
-  const router = useRouter();
-  
-
-  const BackHandler = () => {
-    router.back();
-  };
-
-  const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
-  const deleteFromFavoriteList = useStore(
-    (state: any) => state.deleteFromFavoriteList,
-  );
-
   const addToCart = useStore((state: any) => state.addToCart);
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
 
   const [price, setPrice] = useState(ItemOfIndex.prices[0]);
-  const [fullDesc, setFullDesc] = useState(false);
-
-  const ToggleFavourite = (favourite: boolean, type: string, id: string) => {
-    favourite ? deleteFromFavoriteList(type, id) : addToFavoriteList(type, id);
-  };
-  
 
   const addToCarthandler = ({
     id,
@@ -69,10 +40,10 @@ const CardDetailScreen = () => {
       imagelink_square,
       special_ingredient,
       type,
-      prices: [{...price, quantity: 1}],
+      prices: [{ ...price, quantity: 1 }],
     });
     calculateCartPrice();
-    router.push('/(cartscreen)/cart');
+    router.push("/(cartscreen)/cart");
   };
 
   return (
@@ -82,88 +53,21 @@ const CardDetailScreen = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.ScrollViewFlex}
       >
-        <ImageBackgroundInfo
-          EnableBackHandler={true}
-          imagelink_portrait={ItemOfIndex.imagelink_portrait}
-          type={ItemOfIndex.type}
-          id={ItemOfIndex.id}
-          favourite={ItemOfIndex.favourite}
-          name={ItemOfIndex.name}
-          special_ingredient={ItemOfIndex.special_ingredient}
-          ingredients={ItemOfIndex.ingredients}
-          average_rating={ItemOfIndex.average_rating}
-          ratings_count={ItemOfIndex.ratings_count}
-          roasted={ItemOfIndex.roasted}
-          BackHandler={BackHandler}
-          ToggleFavourite={ToggleFavourite}
-        />
-
+        <ImageSection ItemOfIndex={ItemOfIndex} />
         <View style={styles.FooterInfoArea}>
-          <Text style={styles.InfoTitle}>Description</Text>
-          {fullDesc ? (
-            <TouchableWithoutFeedback
-              onPress={() => {
-                setFullDesc((prev) => !prev);
-              }}
-            >
-              <Text style={styles.DescriptionText}>
-                {ItemOfIndex.description}
-              </Text>
-            </TouchableWithoutFeedback>
-          ) : (
-            <TouchableWithoutFeedback
-              onPress={() => {
-                setFullDesc((prev) => !prev);
-              }}
-            >
-              <Text numberOfLines={3} style={styles.DescriptionText}>
-                {ItemOfIndex.description}
-              </Text>
-            </TouchableWithoutFeedback>
-          )}
+          <DescriptionSection description={ItemOfIndex.description} />
           <Text style={styles.InfoTitle}>Size</Text>
-          <View style={styles.SizeOuterContainer}>
-            {ItemOfIndex.prices.map((data: any) => (
-              <TouchableOpacity
-                key={data.size}
-                onPress={() => {
-                  setPrice(data);
-                }}
-                style={[
-                  styles.SizeBox,
-                  {
-                    borderColor:
-                      data.size == price.size
-                        ? COLORS.primaryOrangeHex
-                        : COLORS.primaryDarkGreyHex,
-                  },
-                ]}
-              >
-                <Text
-                  style={[
-                    styles.SizeText,
-                    {
-                      fontSize:
-                        ItemOfIndex.type == "Bean"
-                          ? FONTSIZE.size_14
-                          : FONTSIZE.size_16,
-                      color:
-                        data.size == price.size
-                          ? COLORS.primaryOrangeHex
-                          : COLORS.secondaryLightGreyHex,
-                    },
-                  ]}
-                >
-                  {data.size}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <PriceSizeSelector
+            prices={ItemOfIndex.prices}
+            price={price}
+            setPrice={setPrice}
+            type={ItemOfIndex.type}
+          />
         </View>
         <PaymentFooter
           price={price}
           buttonTitle="Add to Cart"
-          buttonPressHandler={() => {
+          buttonPressHandler={() =>
             addToCarthandler({
               id: ItemOfIndex.id,
               index: ItemOfIndex.index,
@@ -173,57 +77,12 @@ const CardDetailScreen = () => {
               special_ingredient: ItemOfIndex.special_ingredient,
               type: ItemOfIndex.type,
               price: price,
-            });
-          }}
+            })
+          }
         />
       </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-    justifyContent: "space-between",
-  },
-  FooterInfoArea: {
-    padding: SPACING.space_20,
-  },
-  InfoTitle: {
-    fontFamily: "PoppinsBold",
-    fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
-    marginBottom: SPACING.space_10,
-  },
-  DescriptionText: {
-    letterSpacing: 0.5,
-    fontFamily: "Poppins",
-    fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
-    marginBottom: SPACING.space_30,
-  },
-  SizeOuterContainer: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: SPACING.space_20,
-  },
-  SizeBox: {
-    flex: 1,
-    backgroundColor: COLORS.primaryDarkGreyHex,
-    alignItems: "center",
-    justifyContent: "center",
-    height: SPACING.space_24 * 2,
-    borderRadius: BORDERRADIUS.radius_10,
-    borderWidth: 2,
-  },
-  SizeText: {
-    fontFamily: "Poppins",
-  },
-});
 
 export default CardDetailScreen;

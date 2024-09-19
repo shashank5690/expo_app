@@ -7,7 +7,7 @@ import {
 export const useAppFonts = () => {
   const [fontsLoaded] = useFonts({
     Poppins: Poppins_500Medium,
-    PoppinsBold: Poppins_600SemiBold,
+    Poppins_600SemiBold: Poppins_600SemiBold,
   });
 
   return fontsLoaded;
