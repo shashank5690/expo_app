@@ -4,7 +4,7 @@ export default function CartScreenLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name="cart"
         options={{ headerShown: false }}
 
       />

@@ -55,6 +55,7 @@ const HomeScreen = () => {
     Poppins_500Medium: Poppins_500Medium,
     Poppins_300Light: Poppins_300Light,
   });
+
   const CoffeeList = useStore((state: any) => state.CoffeeList);
   const BeanList = useStore((state: any) => state.BeanList);
    const router=useRouter();
