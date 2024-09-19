@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   HeaderText: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_20,
     color: COLORS.primaryWhiteHex,
   },
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
   },
   CreditCardTitle: {
-    fontFamily: "PoppinsBold",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_14,
     color: COLORS.primaryWhiteHex,
     marginLeft: SPACING.space_10,
@@ -283,18 +283,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   CreditCardNumber: {
-    fontFamily: "PoppinsBold",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex,
     letterSpacing: SPACING.space_4 + SPACING.space_2,
   },
   CreditCardNameSubitle: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_12,
     color: COLORS.secondaryLightGreyHex,
   },
   CreditCardNameTitle: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex,
   },

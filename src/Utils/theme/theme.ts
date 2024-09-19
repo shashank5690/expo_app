@@ -99,7 +99,7 @@ export const FONTFAMILY: FontFamily = {
   poppins_light: "Poppins-Light",
   poppins_medium: "Poppins-Medium",
   poppins_regular: "Poppins-Regular",
-  poppins_semibold: "Poppins-SemiBold",
+  poppins_semibold: "Poppins_600SemiBold",
   poppins_thin: "Poppins-Thin",
 };
 

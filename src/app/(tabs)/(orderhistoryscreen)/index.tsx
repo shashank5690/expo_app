@@ -1,33 +1,79 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { useFonts } from 'expo-font';
-// import { Poppins_500Medium } from '@expo-google-fonts/poppins'
-import Ionicons from '@expo/vector-icons/Ionicons';
+import React, { useState } from "react";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { useFonts } from "expo-font";
+import { styles } from "./orderhistoryStyle";
+import { useStore } from "@/src/store/store";
+import { StatusBar } from "expo-status-bar";
+import { COLORS } from "@/src/Utils/theme/theme";
+import HeaderBar from "@/src/components/HeaderBar";
+import EmptyListAnimation from "@/src/components/EmptyListAnimation";
+import { useRouter } from "expo-router";
+import PopUpAnimation from "@/src/components/PopUpAnimation";
+import OrderHistoryCard from "@/src/components/OrderHistoryCard";
 
-
-export default function OrderHistory() {
-
-  // const [fontsLoaded] = useFonts({
-  //   "Poppins": Poppins_500Medium,
-  // });
-  
+const OrderHistory = () => {
+ 
+  const OrderHistoryList = useStore((state: any) => state.OrderHistoryList);
+  const router = useRouter();
+  const [showAnimation, setShowAnimation] = useState(false);
+  const navigationHandler = ({ index, id, type }: any) => {
+    router.navigate({
+      pathname: "/(carddetails)/details",
+      params: {
+        index,
+        id,
+        type,
+      },
+    });
+  };
+  const buttonPressHandler = () => {
+    setShowAnimation(true);
+    setTimeout(() => {
+      setShowAnimation(false);
+    }, 2000);
+  };
   return (
-    <View style={styles.container}>
-      <Ionicons name="heart-circle" size={32} color="green" />
-      <Text style={styles.text}>Order History Screen</Text>
+    <View style={styles.ScreenContainer}>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.ScrollViewFlex}
+      >
+        <View style={[styles.ScrollViewInnerView, { marginBottom: 100 }]}>
+          <View style={styles.ItemContainer}>
+            <HeaderBar title="Order History" />
+            {OrderHistoryList.length == 0 ? (
+              <EmptyListAnimation title={"No Order History"} />
+            ) : (
+              <View style={styles.ListItemContainer}>
+                {OrderHistoryList.map((data: any, index: any) => (
+                  <OrderHistoryCard
+                    key={index.toString()}
+                    navigationHandler={navigationHandler}
+                    CartList={data.CartList}
+                    CartListPrice={data.CartListPrice}
+                    OrderDate={data.OrderDate}
+                  />
+                ))}
+              </View>
+            )}
+          </View>
+          {OrderHistoryList.length > 0 ? (
+            <TouchableOpacity
+              style={styles.DownloadButton}
+              onPress={() => {
+                buttonPressHandler();
+              }}
+            >
+              <Text style={styles.ButtonText}>Download</Text>
+            </TouchableOpacity>
+          ) : (
+            <></>
+          )}
+        </View>
+      </ScrollView>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-    color: '#333',
-    //fontFamily: 'Poppins',
-  },
-});
+export default OrderHistory;

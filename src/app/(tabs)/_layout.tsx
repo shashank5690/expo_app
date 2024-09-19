@@ -3,7 +3,7 @@ import { Ionicons, FontAwesome6, Entypo } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../Utils/theme/theme';
 import { BlurView } from 'expo-blur';
-
+import { Platform } from 'react-native';
 
 export default function TabsLayout() {
   return (
@@ -14,7 +14,7 @@ export default function TabsLayout() {
       tabBarShowLabel: false,
       tabBarStyle: styles.tabBarStyle,
       tabBarBackground: () =>  (
-        <BlurView intensity={25} tint="dark" style={styles.blurContainer} />
+        <BlurView intensity={15} tint="dark" style={styles.blurContainer} />
       )
     }}
     >
@@ -92,8 +92,15 @@ const styles = StyleSheet.create({
   tabBarStyle: {
     height: 80,
     position: 'absolute',
-   backgroundColor: 'transparent', 
-    // backgroundColor: COLORS.primaryBlackRGBA,
+   // backgroundColor: 'transparent', 
+  ...Platform.select({
+   android:{
+    backgroundColor:COLORS.primaryBlackHex,
+   },
+   ios:{
+    backgroundColor:COLORS.primaryBlackRGBA
+   }
+  }),
     borderTopWidth: 0,
     elevation: 0,
     borderTopColor : 'transparent',

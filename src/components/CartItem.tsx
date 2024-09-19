@@ -11,7 +11,6 @@ import {
 import {
   BORDERRADIUS,
   COLORS,
-  FONTFAMILY,
   FONTSIZE,
   SPACING,
 } from '../Utils/theme/theme';
@@ -213,12 +212,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   CartItemTitle: {
-    fontFamily: FONTFAMILY.poppins_medium,
+    fontFamily: 'Poppins_500Medium',
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex,
   },
   CartItemSubtitle: {
-    fontFamily: FONTFAMILY.poppins_regular,
+    fontFamily: 'Poppins_400Regular',
     fontSize: FONTSIZE.size_12,
     color: COLORS.secondaryLightGreyHex,
   },
@@ -231,7 +230,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primaryDarkGreyHex,
   },
   CartItemRoastedText: {
-    fontFamily: FONTFAMILY.poppins_regular,
+    fontFamily: 'Poppins_400Regular',
     fontSize: FONTSIZE.size_10,
     color: COLORS.primaryWhiteHex,
   },
@@ -257,11 +256,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   SizeText: {
-    fontFamily: FONTFAMILY.poppins_medium,
+    fontFamily: 'Poppins_500Medium',
     color: COLORS.secondaryLightGreyHex,
   },
   SizeCurrency: {
-    fontFamily: FONTFAMILY.poppins_semibold,
+    fontFamily: 'Poppins_600SemiBold',
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryOrangeHex,
   },
@@ -283,7 +282,7 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.space_4,
   },
   CartItemQuantityText: {
-    fontFamily: FONTFAMILY.poppins_semibold,
+    fontFamily: 'Poppins_600SemiBold',
     fontSize: FONTSIZE.size_16,
     color: COLORS.primaryWhiteHex,
   },

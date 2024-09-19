@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   text1: {
-    fontFamily:'PoppinsBold',
+    fontFamily:'Poppins_600SemiBold',
     color: '#D17842',
     fontSize: 16,
   },

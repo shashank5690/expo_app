@@ -101,12 +101,12 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_15 * 2,
   },
   PaymentTitle: {
-    fontFamily: 'PoppinsBold',
+    fontFamily: 'Poppins_600SemiBold',
     fontSize: FONTSIZE.size_16,
     color: COLORS.primaryWhiteHex,
   },
   PaymentPrice: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins_500Medium',
     fontSize: FONTSIZE.size_18,
     color: COLORS.secondaryLightGreyHex,
   },
