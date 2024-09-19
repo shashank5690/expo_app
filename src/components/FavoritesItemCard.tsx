@@ -54,14 +54,16 @@ const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
         roasted={roasted}
         ToggleFavourite={ToggleFavouriteItem}
       />
+      
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
-        colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
-        style={styles.ContainerLinearGradient}>
+        colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]} 
+         style={styles.ContainerLinearGradient}>
         <Text style={styles.DescriptionTitle}>Description</Text>
         <Text style={styles.DescriptionText}>{description}</Text>
-      </LinearGradient>
+        
+       </LinearGradient> 
     </View>
   );
 };
