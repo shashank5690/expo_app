@@ -11,7 +11,6 @@ import {
 import {
   BORDERRADIUS,
   COLORS,
-  FONTFAMILY,
   FONTSIZE,
   SPACING,
 } from '../Utils/theme/theme';
@@ -189,7 +188,5 @@ const CartItem: React.FC<CartItemProps> = ({
     </View>
   );
 };
-
-
 
 export default CartItem;

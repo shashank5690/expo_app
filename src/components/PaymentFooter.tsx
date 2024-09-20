@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
     width: 100,
   },
   PriceTitle: {
-    fontFamily: "Poppins",
+    fontFamily: 'Poppins_500Medium',
     fontSize: FONTSIZE.size_14,
     color: COLORS.secondaryLightGreyHex,
   },
   PriceText: {
-    fontFamily: "Poppins_600SemiBold",
+    fontFamily: 'Poppins_600SemiBold',
     fontSize: FONTSIZE.size_24,
     color: COLORS.primaryOrangeHex,
   },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_20,
   },
   ButtonText: {
-    fontFamily: "Poppins_600SemiBold",
+    fontFamily: 'Poppins_600SemiBold',
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex,
   },
