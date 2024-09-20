@@ -11,7 +11,7 @@ import {
   Poppins_600SemiBold,
   Poppins_300Light,
 } from "@expo-google-fonts/poppins";
-import { useFonts } from "expo-font";
+import { useFonts } from "@expo-google-fonts/poppins";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { styles } from "./homeStyle";
 import { useStore } from "@/src/store/store";

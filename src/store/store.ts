@@ -189,18 +189,18 @@ export const useStore = create(
                   if (state.OrderHistoryList.length > 0) {
                     state.OrderHistoryList.unshift({
                       OrderDate:
-                        new Date().toDateString() +
-                        ' ' +
-                        new Date().toLocaleTimeString(),
+                        new Date().toDateString() ,
+                       // ' ' +
+                       // new Date().toLocaleTimeString(),
                       CartList: state.CartList,
                       CartListPrice: temp.toFixed(2).toString(),
                     });
                   } else {
                     state.OrderHistoryList.push({
                       OrderDate:
-                        new Date().toDateString() +
-                        ' ' +
-                        new Date().toLocaleTimeString(),
+                        new Date().toDateString() ,
+                        // ' ' +
+                        // new Date().toLocaleTimeString(),
                       CartList: state.CartList,
                       CartListPrice: temp.toFixed(2).toString(),
                     });

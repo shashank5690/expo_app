@@ -2,13 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {BORDERRADIUS, SPACING} from '../Utils/theme/theme';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-
-interface BGIconProps {
-  name: keyof typeof MaterialIcons.glyphMap;
-  color: string;
-  size: number;
-  BGColor: string;
-}
+import { BGIconProps } from '../Utils/types/types';
 
 const BGIcon: React.FC<BGIconProps> = ({name, color, size, BGColor}) => {
   return (

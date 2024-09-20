@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
-import { useFonts } from "expo-font";
+import { useFonts } from "@expo-google-fonts/poppins";
 import { styles } from "./orderhistoryStyle";
 import { useStore } from "@/src/store/store";
 import { StatusBar } from "expo-status-bar";
@@ -12,7 +12,6 @@ import PopUpAnimation from "@/src/components/PopUpAnimation";
 import OrderHistoryCard from "@/src/components/OrderHistoryCard";
 
 const OrderHistory = () => {
- 
   const OrderHistoryList = useStore((state: any) => state.OrderHistoryList);
   const router = useRouter();
   const [showAnimation, setShowAnimation] = useState(false);
@@ -65,7 +64,7 @@ const OrderHistory = () => {
                 buttonPressHandler();
               }}
             >
-              <Text style={styles.ButtonText}>Download</Text>
+              <Text style={styles.ButtonText}>View</Text>
             </TouchableOpacity>
           ) : (
             <></>

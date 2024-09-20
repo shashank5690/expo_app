@@ -8,13 +8,9 @@ import {
   import React from 'react';
   import {COLORS, FONTSIZE, SPACING} from '../Utils/theme/theme';
   import OrderItemCard from './OrderItemCard';
+import { styles } from './StylesComponent/stylesOrderHistoryCard';
+import { OrderHistoryCardProps } from '../Utils/types/types';
 
-interface OrderHistoryCardProps{
-    navigationHandler: any;
-    CartList:any;
-    CardListPrice:string;
-    OrderDate:string;
-}
 
 const OrderHistoryCard =  ({
     navigationHandler,
@@ -61,37 +57,6 @@ const OrderHistoryCard =  ({
 }
 
 
-const styles = StyleSheet.create({
-    CardContainer: {
-      gap: SPACING.space_10,
-    },
-    CardHeader: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      gap: SPACING.space_20,
-      alignItems: 'center',
-    },
-    HeaderTitle: {
-      fontFamily: 'Poppins_600SemiBold',
-      fontSize: FONTSIZE.size_16,
-      color: COLORS.primaryWhiteHex,
-    },
-    HeaderSubtitle: {
-      fontFamily: 'Poppins_300Light',
-      fontSize: FONTSIZE.size_16,
-      color: COLORS.primaryWhiteHex,
-    },
-    PriceContainer: {
-      alignItems: 'flex-end',
-    },
-    HeaderPrice: {
-      fontFamily: 'Poppins_500Medium',
-      fontSize: FONTSIZE.size_18,
-      color: COLORS.primaryOrangeHex,
-    },
-    ListContainer: {
-      gap: SPACING.space_20,
-    },
-  });
+
 
 export default OrderHistoryCard

@@ -16,20 +16,10 @@ import {
 } from '../Utils/theme/theme';
 import { LinearGradient } from 'expo-linear-gradient';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import styles from './StylesComponent/StylesCartItem';
+import styles from './StylesComponent/stylesCartItem';
+import { CartItemProps } from '../Utils/types/types';
 
 
-interface CartItemProps {
-  id: string;
-  name: string;
-  imagelink_square: ImageProps;
-  special_ingredient: string;
-  roasted: string;
-  prices: any;
-  type: string;
-  incrementCartItemQuantityHandler: any;
-  decrementCartItemQuantityHandler: any;
-}
 
 const CartItem: React.FC<CartItemProps> = ({
   id,

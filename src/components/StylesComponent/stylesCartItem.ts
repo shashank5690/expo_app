@@ -1,4 +1,4 @@
-import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from "@/src/Utils/theme/theme";
+import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "@/src/Utils/theme/theme";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
     },
     CartItemTitle: {
-      fontFamily: FONTFAMILY.poppins_medium,
+      fontFamily: 'Poppins_500Medium',
       fontSize: FONTSIZE.size_18,
       color: COLORS.primaryWhiteHex,
     },
     CartItemSubtitle: {
-      fontFamily: FONTFAMILY.poppins_regular,
+      fontFamily: 'Poppins_400Regular',
       fontSize: FONTSIZE.size_12,
       color: COLORS.secondaryLightGreyHex,
     },
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
       backgroundColor: COLORS.primaryDarkGreyHex,
     },
     CartItemRoastedText: {
-      fontFamily: FONTFAMILY.poppins_regular,
+      fontFamily: 'Poppins_400Regular',
       fontSize: FONTSIZE.size_10,
       color: COLORS.primaryWhiteHex,
     },
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     SizeText: {
-      fontFamily: FONTFAMILY.poppins_medium,
+      fontFamily: 'Poppins_500Medium',
       color: COLORS.secondaryLightGreyHex,
     },
     SizeCurrency: {

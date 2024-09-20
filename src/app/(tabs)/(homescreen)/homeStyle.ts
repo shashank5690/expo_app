@@ -65,7 +65,8 @@ export const styles = StyleSheet.create({
     paddingVertical: SPACING.space_20,
     paddingHorizontal: SPACING.space_30,
     bottom:21,
-  //  backgroundColor:'green'
+    // backgroundColor:'green',
+    // marginBottom:9
   },
   CoffeeBeansTitle: {
     fontSize: FONTSIZE.size_18,
@@ -73,6 +74,7 @@ export const styles = StyleSheet.create({
     //marginTop: SPACING.space_20,
     fontFamily: "Poppins_500Medium",
     color: COLORS.secondaryLightGreyHex,
+    marginBottom:SPACING.space_10,
       },
       EmptyListContainer:{
         width: Dimensions.get('window').width - SPACING.space_30 * 2,

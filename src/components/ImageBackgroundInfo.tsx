@@ -15,26 +15,9 @@ import {
   MaterialCommunityIcons,
   MaterialIcons,
 } from "@expo/vector-icons";
-import { useAppFonts } from "../Utils/fonts";
+ import { useAppFonts } from "../Utils/fonts";
 import styles from "./StylesComponent/stylesImagegroundInfo";
-
-
-
-interface ImageBackgroundInfoProps {
-  EnableBackHandler: boolean;
-  imagelink_portrait: ImageProps;
-  type: string;
-  id: string;
-  favourite: boolean;
-  name: string;
-  special_ingredient: string;
-  ingredients: string;
-  average_rating: number;
-  ratings_count: string;
-  roasted: string;
-  BackHandler?: any;
-  ToggleFavourite: any;
-}
+import { ImageBackgroundInfoProps } from "../Utils/types/types";
 
 const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
   EnableBackHandler,

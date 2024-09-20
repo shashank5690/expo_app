@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TouchableWithoutFeedback } from "react-native";
-import { useFonts } from "expo-font";
+import { useFonts } from "@expo-google-fonts/poppins";
 import { styles } from "./favoritesStyle";
 import { useStore } from "@/src/store/store";
 import { StatusBar } from "expo-status-bar";

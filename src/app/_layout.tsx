@@ -8,7 +8,7 @@ import {
   Poppins_300Light,
   Poppins_400Regular
 } from "@expo-google-fonts/poppins";
-import { useFonts } from "expo-font";
+import { useFonts } from "@expo-google-fonts/poppins";
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     Poppins_600SemiBold: Poppins_600SemiBold,
