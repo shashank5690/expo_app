@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
       color: COLORS.primaryWhiteHex,
     },
     ItemSubtitleText: {
-      fontFamily: "Poppins",
+      fontFamily: "Poppins_500Medium",
       fontSize: FONTSIZE.size_12,
       color: COLORS.primaryWhiteHex,
     },
@@ -87,12 +87,12 @@ const styles = StyleSheet.create({
       backgroundColor: COLORS.primaryBlackHex,
     },
     PropertyTextFirst: {
-      fontFamily: "Poppins",
+      fontFamily: "Poppins_500Medium",
       fontSize: FONTSIZE.size_10,
       color: COLORS.primaryWhiteHex,
     },
     PropertyTextLast: {
-      fontFamily: "Poppins",
+      fontFamily: "Poppins_500Medium",
       fontSize: FONTSIZE.size_12,
       color: COLORS.primaryWhiteHex,
       marginTop: SPACING.space_2 + SPACING.space_4,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
       color: COLORS.primaryWhiteHex,
     },
     RatingCountText: {
-      fontFamily: "Poppins",
+      fontFamily: "Poppins_500Medium",
       fontSize: FONTSIZE.size_12,
       color: COLORS.primaryWhiteHex,
     },
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
       backgroundColor: COLORS.primaryBlackHex,
     },
     RoastedText: {
-      fontFamily: "Poppins",
+      fontFamily: "Poppins_500Medium",
       fontSize: FONTSIZE.size_10,
       color: COLORS.primaryWhiteHex,
     },

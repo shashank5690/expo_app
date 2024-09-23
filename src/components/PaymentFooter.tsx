@@ -1,29 +1,21 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "../Utils/theme/theme";
-import { useAppFonts } from "../Utils/fonts";
+// import { useAppFonts } from "../Utils/fonts";
+import { styles } from "./StylesComponent/stylesPaymentFooter";
+import { PriceProps,PaymentFooterProps } from "../Utils/types/types";
 
-interface PriceProps {
-  price: string;
-  currency: string;
-}
-
-interface PaymentFooterProps {
-  price: PriceProps;
-  buttonPressHandler: any;
-  buttonTitle: string;
-}
 
 const PaymentFooter: React.FC<PaymentFooterProps> = ({
   price,
   buttonPressHandler,
   buttonTitle,
 }) => {
-  const fontsLoaded = useAppFonts();
+  // const fontsLoaded = useAppFonts();
 
-  if (!fontsLoaded) {
-    return null;
-  }
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
 
   return (
     <View style={styles.PriceFooter}>
@@ -43,44 +35,5 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  PriceFooter: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: SPACING.space_20,
-    padding: SPACING.space_20,
-  },
-  PriceContainer: {
-    alignItems: "center",
-    width: 100,
-  },
-  PriceTitle: {
-    fontFamily: 'Poppins_500Medium',
-    fontSize: FONTSIZE.size_14,
-    color: COLORS.secondaryLightGreyHex,
-  },
-  PriceText: {
-    fontFamily: 'Poppins_600SemiBold',
-    fontSize: FONTSIZE.size_24,
-    color: COLORS.primaryOrangeHex,
-  },
-  Price: {
-    color: COLORS.primaryWhiteHex,
-  },
-  PayButton: {
-    backgroundColor: COLORS.primaryOrangeHex,
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    height: SPACING.space_36 * 2,
-    borderRadius: BORDERRADIUS.radius_20,
-  },
-  ButtonText: {
-    fontFamily: 'Poppins_600SemiBold',
-    fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
-  },
-});
 
 export default PaymentFooter;

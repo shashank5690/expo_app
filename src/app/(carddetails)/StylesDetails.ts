@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   DescriptionText: {
     letterSpacing: 0.5,
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_14,
     color: COLORS.primaryWhiteHex,
     marginBottom: SPACING.space_30,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   SizeText: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
   },
 });
 

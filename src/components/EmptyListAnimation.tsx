@@ -3,10 +3,8 @@ import { View } from 'react-native'
 import { StyleSheet,Text } from 'react-native'
 import LottieView from 'lottie-react-native'
 import { COLORS,FONTSIZE } from '../Utils/theme/theme'
+import { EmptyListAnimationProps } from '../Utils/types/types'
 
-interface EmptyListAnimationProps{
-    title:string;
-}
 
 const EmptyListAnimation: React.FC<EmptyListAnimationProps> =  ({title}) => {
   return (

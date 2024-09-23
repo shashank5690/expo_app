@@ -91,18 +91,6 @@ interface FontFamily {
   poppins_thin: string;
 }
 
-export const FONTFAMILY: FontFamily = {
-  poppins_black: "Poppins-Black",
-  poppins_bold: "Poppins-Bold",
-  poppins_extrabold: "Poppins-ExtraBold",
-  poppins_extralight: "Poppins-ExtraLight",
-  poppins_light: "Poppins-Light",
-  poppins_medium: "Poppins-Medium",
-  poppins_regular: "Poppins-Regular",
-  poppins_semibold: "Poppins_600SemiBold",
-  poppins_thin: "Poppins-Thin",
-};
-
 interface FontSize {
   size_8: number;
   size_10: number;

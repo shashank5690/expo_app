@@ -18,7 +18,6 @@ export default function TabsLayout() {
       )
     }}
     >
-      {/* Home Tab */}
       <Tabs.Screen
         name="(homescreen)"
         options={{
@@ -34,7 +33,7 @@ export default function TabsLayout() {
           ),
         }}
       />
-      {/* Cart Tab */}
+
       <Tabs.Screen
         name="(cartscreen)"
         options={{

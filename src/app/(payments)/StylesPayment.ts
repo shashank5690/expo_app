@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   HeaderText: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_20,
     color: COLORS.primaryWhiteHex,
   },
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     letterSpacing: SPACING.space_4 + SPACING.space_2,
   },
   CreditCardNameSubitle: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_500Medium",
     fontSize: FONTSIZE.size_12,
     color: COLORS.secondaryLightGreyHex,
   },

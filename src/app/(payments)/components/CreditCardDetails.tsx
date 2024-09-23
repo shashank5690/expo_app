@@ -46,7 +46,7 @@ const CreditCardDetails = ({ isActive }: { isActive: boolean }) => {
           <View style={styles.CreditCardRow}>
             <View style={styles.CreditCardNameContainer}>
               <Text style={styles.CreditCardNameSubitle}>Card Holder Name</Text>
-              <Text style={styles.CreditCardNameTitle}>Robert Evans</Text>
+              <Text style={styles.CreditCardNameTitle}>Shashank Singh</Text>
             </View>
             <View style={styles.CreditCardDateContainer}>
               <Text style={styles.CreditCardNameSubitle}>Expiry Date</Text>

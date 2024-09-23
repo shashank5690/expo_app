@@ -1,16 +1,12 @@
 export const getCategoriesFromData = (data: any) => {
-    let temp: any = {};
-    for (let i = 0; i < data.length; i++) {
-      if (temp[data[i].name] == undefined) {
-        temp[data[i].name] = 1;
-      } else {
-        temp[data[i].name]++;
-      }
-    }
-    let categories = Object.keys(temp);
-    categories.unshift("All");
-    return categories;
-  };
+  const categoryCounts = data.reduce((acc: any, item: any) => {
+    acc[item.name] = (acc[item.name] || 0) + 1;
+    return acc;
+  }, {});
+
+  return ["All", ...Object.keys(categoryCounts)];
+};
+
   
  export const getCoffeeList = (category: string, data: any) => {
     if (category == "All") {

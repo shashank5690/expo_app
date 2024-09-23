@@ -8,21 +8,8 @@ import {
   FONTSIZE,
   SPACING,
 } from '../Utils/theme/theme';
+import { FavoritesItemCardProps } from '../Utils/types/types';
 
-interface FavoritesItemCardProps {
-  id: string;
-  imagelink_portrait: ImageProps;
-  name: string;
-  special_ingredient: string;
-  type: string;
-  ingredients: string;
-  average_rating: number;
-  ratings_count: string;
-  roasted: string;
-  description: any;
-  favourite: boolean;
-  ToggleFavouriteItem: any;
-}
 
 const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
   id,

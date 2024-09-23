@@ -1,16 +1,12 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { Text, View, Image } from "react-native";
 import React from "react";
-import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "../Utils/theme/theme";
 import { LinearGradient } from "expo-linear-gradient";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { useAppFonts } from "../Utils/fonts";
+//  import { useAppFonts } from "../Utils/fonts";
+import { styles } from "./StylesComponent/stylesPaymentMethods";
+import { COLORS,FONTSIZE } from "../Utils/theme/theme";
+import {PaymentMethodProps} from '../Utils/types/types'; 
 
-interface PaymentMethodProps {
-  paymentMode: string;
-  name: string;
-  icon: any;
-  isIcon: boolean;
-}
 
 const PaymentMethod: React.FC<PaymentMethodProps> = ({
   paymentMode,
@@ -18,11 +14,11 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
   icon,
   isIcon,
 }) => {
-  const fontsLoaded = useAppFonts();
+  // const fontsLoaded = useAppFonts();
 
-  if (!fontsLoaded) {
-    return null;
-  }
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
 
   return (
     <View
@@ -68,48 +64,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  PaymentCardContainer: {
-    borderRadius: BORDERRADIUS.radius_15 * 2,
-    backgroundColor: COLORS.primaryGreyHex,
-    borderWidth: 3,
-  },
-  LinearGradientWallet: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: SPACING.space_12,
-    paddingHorizontal: SPACING.space_24,
-    gap: SPACING.space_24,
-    borderRadius: BORDERRADIUS.radius_15 * 2,
-  },
-  WalletRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: SPACING.space_24,
-  },
-  LinearGradientRegular: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: SPACING.space_12,
-    paddingHorizontal: SPACING.space_24,
-    gap: SPACING.space_24,
-    borderRadius: BORDERRADIUS.radius_15 * 2,
-  },
-  PaymentTitle: {
-    fontFamily: 'Poppins_600SemiBold',
-    fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
-  },
-  PaymentPrice: {
-    fontFamily: 'Poppins_500Medium',
-    fontSize: FONTSIZE.size_18,
-    color: COLORS.secondaryLightGreyHex,
-  },
-  PaymentImage: {
-    height: SPACING.space_30,
-    width: SPACING.space_30,
-  },
-});
+
 
 export default PaymentMethod;

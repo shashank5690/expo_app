@@ -4,13 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; 
 import { COLORS, FONTSIZE, SPACING } from '../Utils/theme/theme';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
-
-interface GradientBGIconProps {
-  name: string;
-  color: string;
-  size: number;
-}
+import { GradientBGIconProps } from '../Utils/types/types';
 
 
 const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) => {
