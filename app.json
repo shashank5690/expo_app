@@ -29,13 +29,7 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      [
-        "expo-font",
-        {
-            "fonts" :["assets/fonts/app_icons.ttf"]
-        }
-      ],
-
+     
       "expo-router",
       [
         "expo-asset",
@@ -49,6 +43,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "05b51408-c04f-4416-9db9-2643eb37fe10"
+      }
     }
   }
 }

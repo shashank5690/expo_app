@@ -2,7 +2,7 @@ import { Text, View, Image } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
- import { useAppFonts } from "../Utils/fonts";
+//  import { useAppFonts } from "../Utils/fonts";
 import { styles } from "./StylesComponent/stylesPaymentMethods";
 import { COLORS,FONTSIZE } from "../Utils/theme/theme";
 import {PaymentMethodProps} from '../Utils/types/types'; 
@@ -14,11 +14,11 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
   icon,
   isIcon,
 }) => {
-  const fontsLoaded = useAppFonts();
+  // const fontsLoaded = useAppFonts();
 
-  if (!fontsLoaded) {
-    return null;
-  }
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
 
   return (
     <View
