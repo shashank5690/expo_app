@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { styles } from './StylesComponent/stylesGradientBGIcon';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; 
 import { COLORS, FONTSIZE, SPACING } from '../Utils/theme/theme';
@@ -27,23 +27,6 @@ const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) =>
   );
 };
 
-const styles = StyleSheet.create({
 
-    container: {
-        borderWidth: 2,
-        borderColor: COLORS.secondaryDarkGreyHex,
-        borderRadius: SPACING.space_12,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: COLORS.secondaryDarkGreyHex,
-        overflow: 'hidden',
-      },
-      linearGradientBG: {
-        height: SPACING.space_36,
-        width: SPACING.space_36,
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-});
 
 export default GradientBGIcon;

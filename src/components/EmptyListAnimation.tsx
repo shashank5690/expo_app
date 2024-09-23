@@ -4,7 +4,7 @@ import { StyleSheet,Text } from 'react-native'
 import LottieView from 'lottie-react-native'
 import { COLORS,FONTSIZE } from '../Utils/theme/theme'
 import { EmptyListAnimationProps } from '../Utils/types/types'
-
+import { styles } from './StylesComponent/stylesEmptyListAnimation'
 
 const EmptyListAnimation: React.FC<EmptyListAnimationProps> =  ({title}) => {
   return (
@@ -20,20 +20,5 @@ const EmptyListAnimation: React.FC<EmptyListAnimationProps> =  ({title}) => {
   )
 }
 
-const styles = StyleSheet.create({
-    EmptyCartContainer: {
-      flex: 1,
-      justifyContent: 'center',
-    },
-    LottieStyle: {
-      height: 300,
-    },
-    LottieText: {
-      fontFamily: 'Poppins_500Medium',
-      fontSize: FONTSIZE.size_16,
-      color: COLORS.primaryOrangeHex,
-      textAlign: 'center',
-    },
-  });
 
 export default EmptyListAnimation

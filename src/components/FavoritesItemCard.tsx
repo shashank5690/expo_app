@@ -9,7 +9,7 @@ import {
   SPACING,
 } from '../Utils/theme/theme';
 import { FavoritesItemCardProps } from '../Utils/types/types';
-
+import { styles } from './StylesComponent/stylesFavoritesItemCard';
 
 const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
   id,
@@ -55,25 +55,6 @@ const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  CardContainer: {
-    borderRadius: BORDERRADIUS.radius_25,
-    overflow: 'hidden',
-  },
-  ContainerLinearGradient: {
-    gap: SPACING.space_10,
-    padding: SPACING.space_20,
-  },
-  DescriptionTitle: {
-    fontFamily: 'Poppins_600SemiBold',
-    fontSize: FONTSIZE.size_16,
-    color: COLORS.secondaryLightGreyHex,
-  },
-  DescriptionText: {
-    fontFamily: 'Poppins_400Regular',
-    fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
-  },
-});
+
 
 export default FavoritesItemCard;

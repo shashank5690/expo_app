@@ -16,12 +16,6 @@ import {
   SPACING,
 } from '../Utils/theme/theme';
 import AntDesign from '@expo/vector-icons/AntDesign';
-// import {
-//     Poppins_500Medium,
-//     Poppins_600SemiBold,
-//     Poppins_300Light
-//   } from "@expo-google-fonts/poppins";
-//   import { useFonts } from "expo-font";
 import BGIcon from './BGIcon';
 import styles from './StylesComponent/stylesCoffeeCard';
 import { CoffeeCardProps } from '../Utils/types/types';
@@ -40,14 +34,6 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
   price,
   buttonPressHandler,
 }) => {
-    // const [fontsLoaded] = useFonts({
-    //     Poppins_600SemiBold: Poppins_600SemiBold,
-    //     Poppins_500Medium: Poppins_500Medium,
-    //     Poppins_300Light: Poppins_300Light,
-    //   });
-    //   if (!fontsLoaded) {
-    //     return null;
-    //   }
   return (
     <LinearGradient
       start={{x: 0, y: 0}}

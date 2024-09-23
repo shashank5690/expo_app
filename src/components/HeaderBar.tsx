@@ -4,7 +4,7 @@ import { COLORS, FONTSIZE, SPACING } from "../Utils/theme/theme";
 import ProfilePic from "./ProfilePic";
 import GradientBGIcon from "./GradientBGIcon";
 import { HeaderBarProps } from "../Utils/types/types";
-
+import { styles } from "./StylesComponent/stylesHeaderBar";
 
 const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
   return (
@@ -16,19 +16,6 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  HeaderContainer: {
-    padding: SPACING.space_30,
-    top: SPACING.space_12,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  HeaderText: {
-    fontFamily: "Poppins_600SemiBold",
-    fontSize: FONTSIZE.size_20,
-    color: COLORS.primaryWhiteHex,
-  },
-});
+
 
 export default HeaderBar;

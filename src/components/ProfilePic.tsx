@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
 import {COLORS, SPACING} from '../Utils/theme/theme';
+import { styles } from "./StylesComponent/stylesProfilePic";
 
 const ProfilePic = () => {
   return (
@@ -13,21 +14,6 @@ const ProfilePic = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  ImageContainer: {
-    height: SPACING.space_40,
-    width: SPACING.space_40,
-    borderRadius: SPACING.space_12,
-    borderWidth: 2,
-    borderColor: COLORS.secondaryDarkGreyHex,
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-  },
-  Image: {
-    height: SPACING.space_36,
-    width: SPACING.space_36,
-  },
-});
+
 
 export default ProfilePic;

@@ -3,7 +3,7 @@ import React from 'react';
 import {BORDERRADIUS, SPACING} from '../Utils/theme/theme';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { BGIconProps } from '../Utils/types/types';
-
+import { styles } from './StylesComponent/stylesBGIcon';
 const BGIcon: React.FC<BGIconProps> = ({name, color, size, BGColor}) => {
   return (
     <View style={[styles.IconBG, {backgroundColor: BGColor}]}>
@@ -14,14 +14,5 @@ const BGIcon: React.FC<BGIconProps> = ({name, color, size, BGColor}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  IconBG: {
-    height: SPACING.space_30,
-    width: SPACING.space_30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: BORDERRADIUS.radius_8,
-  },
-});
 
 export default BGIcon;
