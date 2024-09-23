@@ -104,3 +104,4 @@ export interface CoffeeCardProps {
     size: number;
     BGColor: string;
   }
+  

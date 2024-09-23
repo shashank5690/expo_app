@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
       marginTop: SPACING.space_15,
     },
     CardPriceCurrency: {
-      fontFamily: 'Poppins_600SemiBold',
+      fontFamily: 'Poppins_500Medium',
       color: COLORS.primaryOrangeHex,
       fontSize: FONTSIZE.size_18,
-      
+      paddingRight:SPACING.space_10,
     },
     CardPrice: {
       color: COLORS.primaryWhiteHex,
